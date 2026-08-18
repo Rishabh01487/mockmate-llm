@@ -1,0 +1,50 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+env/
+.pytest_cache/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Data & model artifacts (too big for git)
+data_processed/
+data_processed_llm/
+data_smoke/
+checkpoints/
+checkpoints_smoke/
+*.safetensors
+*.bin
+*.pt
+*.pth
+hf_cache/
+
+# LeetCode dataset (18MB — too big for GitHub free LFS)
+# You can re-download it from HuggingFace anytime:
+#   curl -L -o /tmp/greengerong.jsonl \
+#     https://huggingface.co/datasets/greengerong/leetcode/resolve/main/leetcode-train.jsonl
+leetcode_dataset.jsonl
+/tmp/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+*.swp
+*.swo
+
+# Logs
+*.log
+wandb/
+runs/
+
+# Secrets
+.env
+.env.local
+*.key
+token.txt

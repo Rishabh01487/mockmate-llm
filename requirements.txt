@@ -1,0 +1,54 @@
+# ============================================================
+# Mockmate-LLM — Fine-tuning + API + UI requirements
+# Tested on Python 3.10 / 3.11, CUDA 12.1, RTX 3090/4090 (24GB VRAM)
+# Install order matters: torch first, then everything else.
+# ============================================================
+
+# ---- Core PyTorch (CUDA 12.1 build) ----
+--extra-index-url https://download.pytorch.org/whl/cu121
+torch==2.3.1
+torchvision==0.18.1
+torchaudio==2.3.1
+
+# ---- Hugging Face stack ----
+transformers==4.44.2
+tokenizers==0.19.1
+datasets==2.21.0
+accelerate==0.33.0
+peft==0.12.0
+trl==0.9.6
+bitsandbytes==0.43.3
+sentencepiece==0.2.0
+protobuf==5.27.3
+safetensors==0.4.4
+huggingface_hub==0.24.6
+
+# ---- Training utilities ----
+einops==0.8.0
+flash-attn==2.6.3 ; platform_system == "Linux" and sys_platform == "linux"
+tensorboard==2.17.0
+wandb==0.17.9           # optional — set WANDB_MODE=disabled to skip
+scikit-learn==1.5.1
+numpy==1.26.4
+pandas==2.2.2
+
+# ---- FastAPI backend ----
+fastapi==0.115.0
+uvicorn[standard]==0.30.6
+pydantic==2.9.2
+python-multipart==0.0.10
+corsheaders==0.0.1        # alias used by some setups; fastapi.middleware.cors is built-in
+
+# ---- Streamlit UI ----
+streamlit==1.38.0
+streamlit-ace==0.1.1      # code editor support
+streamlit-chat-message==0.1.7
+extra-streamlit-components==0.1.71
+
+# ---- General utilities ----
+requests==2.32.3
+tqdm==4.66.5
+python-dotenv==1.0.1
+loguru==0.7.2
+orjson==3.10.7
+pyyaml==6.0.2
